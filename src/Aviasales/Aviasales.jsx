@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Wrap } from "./styled";
 import { getAllTickets } from "../API";
+import TicketsList from '../TicketsList/';
+import Sidebar from '../Sidebar/';
 
 class Aliasales extends Component {
   state = {
@@ -20,7 +22,8 @@ class Aliasales extends Component {
 
     return (
       <Wrap>
-        {tickets.length > 0 && <div>{tickets[0].origin_name}</div>}
+        <Sidebar />
+        {tickets.length > 0 && <TicketsList tickets={tickets} />}
       </Wrap>
     );
   }
