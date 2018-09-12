@@ -1,4 +1,4 @@
-const API_URL = '/src/';
+const API_URL = '';
 
 const getJSON = (...args) => fetch(...args).then(r => r.json());
 
