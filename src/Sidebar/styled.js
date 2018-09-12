@@ -6,4 +6,8 @@ export const SideWrap = styled.div`
   border-radius: 5px;
   background-color: #ffffff;
   align-self: flex-start;
+  @media (max-width: 540px) {
+    margin-bottom: 20px;
+    align-self: center;
+  }
 `;

@@ -24,6 +24,13 @@ export const Item = styled.li`
     height: 161px;
     background-color: #eceff1;
   }
+  @media (max-width: 540px) {
+    flex-direction: column-reverse;
+    padding: 16px;
+    &:before {
+      display: none;
+    }
+  }
 `;
 
 export const Button = styled.button`
@@ -43,6 +50,10 @@ export const Button = styled.button`
   &:hover {
     background-color: #ff8124;
   }
+  @media (max-width: 540px) {
+    align-self: center;
+    padding: 6px 0;
+  }
 `;
 
 export const Span = styled.span`
@@ -55,6 +66,9 @@ export const InfoBlock = styled.div`
   justify-content: space-between;
   position: relative;
   margin-bottom: 40px;
+  @media (max-width: 540px) {
+    margin-bottom: 15px;
+  }
 `;
 
 export const Info = styled.div`
@@ -114,4 +128,8 @@ export const BuySection = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-right: 48px;
+  @media (max-width: 540px) {
+    flex-direction: row;
+    margin: 0;
+  }
 `;

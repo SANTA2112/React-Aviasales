@@ -19,6 +19,9 @@ export const Button = styled.button`
   transition: opacity .3s;
   will-change: opacity;
   outline: none;
+  @media (max-width: 540px) {
+    opacity: 1;
+  }
 `;
 
 export const Wrapper = styled.div`
