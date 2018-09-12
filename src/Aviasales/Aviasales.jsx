@@ -7,6 +7,7 @@ import Sidebar from '../Sidebar/';
 class Aliasales extends Component {
   state = {
     tickets: [],
+    curr: 'RUB',
   }
 
   componentDidMount() {
@@ -17,13 +18,15 @@ class Aliasales extends Component {
     getAllTickets().then(tickets => this.setState({ tickets }))
   }
 
+  takeCurr = curr => this.setState({ curr });
+
   render() {
-    const { tickets } = this.state;
+    const { tickets, curr } = this.state;
 
     return (
       <Wrap>
-        <Sidebar />
-        {tickets.length > 0 && <TicketsList tickets={tickets} />}
+        <Sidebar curr={curr} takeCurr={this.takeCurr}/>
+        {tickets.length > 0 && <TicketsList tickets={tickets} curr={curr}/>}
       </Wrap>
     );
   }

@@ -1,14 +1,23 @@
 import React from 'react';
 import { Arrow, Button, BuySection, City, Date, Info, InfoBlock, Item, Logo, Span, Time, Transplantation } from "./styled";
 
-export default ({ ticket }) => {
+export default ({ ticket, curr }) => {
   const convertStops = () => ticket.stops === 1 ?  ticket.stops + ' Пересадка' : ticket.stops + ' Пересадки';
+
+  const convertCurr = () => {
+    const currencyType =  [
+      { valuta: 'RUB', value: ticket.price, icon: '₽' },
+      { valuta: 'USD', value: Math.round(ticket.price / 69), icon: '$' },
+      { valuta: 'EUR', value: Math.round(ticket.price / 80), icon: '€' }
+    ];
+    return currencyType.filter(el => el.valuta === curr).pop();
+  }
 
   return (
     <Item>
       <BuySection>
         <Logo />
-        <Button>Купить за { ticket.price } <Span>₽</Span>​</Button>
+        <Button>Купить за { convertCurr().value } <Span>{ convertCurr().icon }</Span>​</Button>
       </BuySection>
       <InfoBlock>
         <Info rigth>
